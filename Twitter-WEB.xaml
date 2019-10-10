@@ -1,0 +1,218 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Twitter_WEB" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="622,1792" sap2010:WorkflowViewState.IdRef="Twitter-WEB_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Twitter-WEB" sap:VirtualizedContainerService.HintSize="602,1692" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="560,1509" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://twitter.com">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1410" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="jakarta" Name="Cari" />
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="DataTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto Activate="True" ClickBeforeTyping="True" ContinueOnError="True" DelayBefore="0" DelayBetweenKeys="0" DelayMS="0" DisplayName="Type Into 'INPUT'" EmptyField="False" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[Cari]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3db471786ba865f63fcdbcfaedb9c022" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SendHotkey EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" ContinueOnError="True" DelayBefore="500" DelayBetweenKeys="0" DelayMS="500" DisplayName="Send Hotkey 'DIV'" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="31dcd702258bd3bbd12b0ac563ee2162" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:Click SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="500" DelayMS="500" DisplayName="Click 'Terbaru'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2c82e9c12d4aff6b1dc1419d2d92ac95" Selector="&lt;webctrl aaname='Terakhir' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;span' tag='SPAN' /&gt;&#xA;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <While sap:VirtualizedContainerService.HintSize="484,649" sap2010:WorkflowViewState.IdRef="While_1">
+              <While.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="i" />
+              </While.Variables>
+              <While.Condition>[i&lt;20]</While.Condition>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,492" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SendHotkey EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="False" ClickBeforeTyping="False" ContinueOnError="True" DelayBefore="0" DelayBetweenKeys="0" DelayMS="100" DisplayName="Send Hotkey 'DIV'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="end" KeyModifiers="None" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3f10d483c95b4ddb4bebe437231fdb36" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div' parentid='react-root' tag='DIV' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[DataTable]" DisplayName="Extract Structured Data 'DIV'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Username' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-zl2h9q' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1d09ksm r-18u37iz r-1wbh5a2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1wbh5a2 r-dnmrzs' idx='1'/&gt;&lt;webctrl tag='a' class='css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wbh5a2 r-1f6r7vd' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao css-bfa6kz r-1re7ezh r-18u37iz r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='User' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-zl2h9q' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1d09ksm r-18u37iz r-1wbh5a2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1wbh5a2 r-dnmrzs' idx='1'/&gt;&lt;webctrl tag='a' class='css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-dnmrzs' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao css-bfa6kz r-hkyrab r-1qd0xha r-a023e6 r-vw2c0b r-ad9z0x r-bcqeeo r-3s2u2q r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Like' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-156q2ks r-1mdbhws' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-18u37iz r-16y2uox r-1h0z5md' idx='3'/&gt;&lt;webctrl tag='div' class='css-18t94o4 css-1dbjc4n r-1777fci r-11cpok1 r-1ny4l3l r-bztko3 r-lrvibr' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao r-1awozwy r-1re7ezh r-6koalj r-1qd0xha r-a023e6 r-16dba41 r-1h0z5md r-ad9z0x r-bcqeeo r-o7ynqc r-clp7b1 r-3s2u2q r-qvutc0' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-xoduu5 r-1udh08x' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-1n0xq6e r-bcqeeo r-d3hbe1 r-1wgg2b2 r-axxi2z r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Retweet' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-156q2ks r-1mdbhws' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-18u37iz r-16y2uox r-1h0z5md' idx='2'/&gt;&lt;webctrl tag='div' class='css-18t94o4 css-1dbjc4n r-1777fci r-11cpok1 r-1ny4l3l r-bztko3 r-lrvibr' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao r-1awozwy r-1re7ezh r-6koalj r-1qd0xha r-a023e6 r-16dba41 r-1h0z5md r-ad9z0x r-bcqeeo r-o7ynqc r-clp7b1 r-3s2u2q r-qvutc0' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-xoduu5 r-1udh08x' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-1n0xq6e r-bcqeeo r-d3hbe1 r-1wgg2b2 r-axxi2z r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact=&quot;1&quot; name=&quot;Comment&quot; attr=&quot;text&quot;&gt;&lt;webctrl tag=&quot;div&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;article&quot; class=&quot;css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-1j3t67a&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-18u37iz r-thb0q2&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-18u37iz r-1wtj0ep r-156q2ks r-1mdbhws&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-1iusvr4 r-18u37iz r-16y2uox r-1h0z5md&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-18t94o4 css-1dbjc4n r-1777fci r-11cpok1 r-1ny4l3l r-bztko3 r-lrvibr&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-901oao r-1awozwy r-1re7ezh r-6koalj r-1qd0xha r-a023e6 r-16dba41 r-1h0z5md r-ad9z0x r-bcqeeo r-o7ynqc r-clp7b1 r-3s2u2q r-qvutc0&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-xoduu5 r-1udh08x&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;span&quot; class=&quot;css-901oao css-16my406 r-1qd0xha r-ad9z0x r-1n0xq6e r-bcqeeo r-d3hbe1 r-1wgg2b2 r-axxi2z r-qvutc0&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;span&quot; class=&quot;css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0&quot; idx=&quot;1&quot;/&gt;&lt;/column&gt;&lt;column exact=&quot;1&quot; name=&quot;Reply&quot; attr=&quot;text&quot;&gt;&lt;webctrl tag=&quot;div&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;article&quot; class=&quot;css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-1j3t67a&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-18u37iz r-thb0q2&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-1dbjc4n r-4qtqp9 r-18u37iz r-1wtj0ep r-zl2h9q&quot; idx=&quot;1&quot;/&gt;&lt;webctrl tag=&quot;div&quot; class=&quot;css-901oao r-1re7ezh r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-qvutc0&quot; idx=&quot;1&quot;/&gt;&lt;/column&gt;&lt;column exact='1' name='Tweet' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao r-hkyrab r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-bnwqim r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Time' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-zl2h9q' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1d09ksm r-18u37iz r-1wbh5a2' idx='1'/&gt;&lt;webctrl tag='a' class='css-4rbku5 css-18t94o4 css-901oao r-1re7ezh r-1loqt21 r-1q142lx r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-3s2u2q r-qvutc0' idx='1'/&gt;&lt;webctrl tag='time' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_5" MaxNumberOfResults="0" SimulateClick="True">
+                  <ui:ExtractData.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0bf39c5a8594dd6e58018fe1c9eef01a" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' parentid='react-root' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:ExtractData.Target>
+                </ui:ExtractData>
+                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </While>
+            <ui:WriteRange AddHeaders="True" DataTable="[DataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[&quot;Hasil-&quot;+Cari+&quot;-WEB.xlsx&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="560,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Jakartako Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="07188c1bb2921e70c43dcfe5af970184" Selector="&lt;html app='chrome.exe' title='jakartakotor - Pencarian Twitter / Twitter' /&gt;">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'DIV'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Username' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-zl2h9q' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1d09ksm r-18u37iz r-1wbh5a2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1wbh5a2 r-dnmrzs' idx='1'/&gt;&lt;webctrl tag='a' class='css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wbh5a2 r-1f6r7vd' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao css-bfa6kz r-1re7ezh r-18u37iz r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Name' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-zl2h9q' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1d09ksm r-18u37iz r-1wbh5a2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1wbh5a2 r-dnmrzs' idx='1'/&gt;&lt;webctrl tag='a' class='css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wbh5a2 r-dnmrzs r-1ny4l3l' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-dnmrzs' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao css-bfa6kz r-hkyrab r-1qd0xha r-a023e6 r-vw2c0b r-ad9z0x r-bcqeeo r-3s2u2q r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;webctrl tag='span' class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Tweet' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-901oao r-hkyrab r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-bnwqim r-qvutc0' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Date' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-my5ep6 r-qklmqi r-1adg3ll' idx='1'/&gt;&lt;webctrl tag='article' class='css-1dbjc4n r-1loqt21 r-1udh08x r-o7ynqc r-1j63xyz' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1j3t67a' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-thb0q2' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1iusvr4 r-46vdb2 r-1777fci r-5f2r5o r-bcqeeo r-1mi0q7o' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-18u37iz r-1wtj0ep r-zl2h9q' idx='1'/&gt;&lt;webctrl tag='div' class='css-1dbjc4n r-1d09ksm r-18u37iz r-1wbh5a2' idx='1'/&gt;&lt;webctrl tag='a' class='css-4rbku5 css-18t94o4 css-901oao r-1re7ezh r-1loqt21 r-1q142lx r-1qd0xha r-a023e6 r-16dba41 r-ad9z0x r-bcqeeo r-3s2u2q r-qvutc0' idx='1'/&gt;&lt;webctrl tag='time' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_4" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='react-root' tag='DIV' /&gt;" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c6d1545e8a16f8a22799a853e38d6696" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' parentid='react-root' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+            </ui:BrowserScope>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>
